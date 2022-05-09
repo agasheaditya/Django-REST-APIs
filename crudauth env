@@ -1,0 +1,405 @@
+{
+	"info": {
+		"_postman_id": "ace14005-8c0b-482a-9566-3f3b4d00c83d",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Smartwatch-API",
+			"item": [
+				{
+					"name": "GET-Smartwatchdata",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://dsl-smartwatch-api-35z6x.ondigitalocean.app/smartwatchdata/smartwatchdata/",
+							"protocol": "https",
+							"host": [
+								"dsl-smartwatch-api-35z6x",
+								"ondigitalocean",
+								"app"
+							],
+							"path": [
+								"smartwatchdata",
+								"smartwatchdata",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST-Smartwatchdata",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "{{IMEI Unique Number}}",
+									"value": "13183516",
+									"type": "text"
+								},
+								{
+									"key": "{{Latitude}}",
+									"value": "45.7458",
+									"type": "text"
+								},
+								{
+									"key": "{{Longitude}}",
+									"value": "23.16",
+									"description": "0",
+									"type": "text"
+								},
+								{
+									"key": "{{MAC Address}}",
+									"value": "njkkopopq7578",
+									"type": "text"
+								},
+								{
+									"key": "{{Date Time}}",
+									"value": "2022-02-19T20:41:00Z",
+									"type": "text"
+								},
+								{
+									"key": "{{Temperature}}",
+									"value": "7",
+									"type": "text"
+								},
+								{
+									"key": "{{Step Count}}",
+									"value": "35641",
+									"type": "text"
+								},
+								{
+									"key": "{{Heart Rate}}",
+									"value": "465",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://dsl-smartwatch-api-35z6x.ondigitalocean.app/smartwatchdata/smartwatchdata/",
+							"protocol": "https",
+							"host": [
+								"dsl-smartwatch-api-35z6x",
+								"ondigitalocean",
+								"app"
+							],
+							"path": [
+								"smartwatchdata",
+								"smartwatchdata",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "crudauth",
+			"item": [
+				{
+					"name": "listAllRecords",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ1Nzg2OTA4LCJpYXQiOjE2NDU3ODY2MDgsImp0aSI6IjExYTZkM2FiMTk0NjRkZDQ4NzNkNmJjMTYzYmEzZWI2IiwidXNlcl9pZCI6MX0.grqYzSu0WTs1iZapENgjU8TM377BwG17ishDMf948K8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Token f6779acae96fa6bdeaa8b625e135a26e9268e1d1",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/taskmanager/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"taskmanager",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "api-token",
+					"request": {
+						"auth": {
+							"type": "bearer"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin\",\r\n    \"password\":\"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jwt-access-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"aditya\",\r\n    \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jwt/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jwt",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "jwt-refresh-access-token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY0NTg3Mjg4MCwiaWF0IjoxNjQ1Nzg2NDgwLCJqdGkiOiIyOTdhOGQ1ZWQ5Njk0ZGEwOWZiYjE4ZThiMmQyYjEzOCIsInVzZXJfaWQiOjF9.BBUs7u-v-dfhP-U7iYsNL3Bbv7XFrT75Suvb672vCfs\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/jwt/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"jwt",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create-Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2MDIzODE5LCJpYXQiOjE2NDYwMjM1MTksImp0aSI6IjhkMTRlNThiM2Q1OTQ3OGU4YWRkN2RmMDMwODhjYTAwIiwidXNlcl9pZCI6MX0.6PfNJU9lHIKgbClOP6Y1Lzv9mD0W3xqXPqtqX-DLvQ8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "date_created",
+									"value": "2022-02-28",
+									"type": "text"
+								},
+								{
+									"key": "taskName",
+									"value": "DSL test1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "description dsl test 1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/taskmanager/createTask/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"taskmanager",
+								"createTask",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2MDIzODE5LCJpYXQiOjE2NDYwMjM1MTksImp0aSI6IjhkMTRlNThiM2Q1OTQ3OGU4YWRkN2RmMDMwODhjYTAwIiwidXNlcl9pZCI6MX0.6PfNJU9lHIKgbClOP6Y1Lzv9mD0W3xqXPqtqX-DLvQ8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "date_created",
+									"value": "2022-01-28",
+									"type": "text"
+								},
+								{
+									"key": "taskName",
+									"value": "dsl test updated",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "dsl test updated description",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/taskmanager/updateTask/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"taskmanager",
+								"updateTask",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete-Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ2MDIzODE5LCJpYXQiOjE2NDYwMjM1MTksImp0aSI6IjhkMTRlNThiM2Q1OTQ3OGU4YWRkN2RmMDMwODhjYTAwIiwidXNlcl9pZCI6MX0.6PfNJU9lHIKgbClOP6Y1Lzv9mD0W3xqXPqtqX-DLvQ8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/taskmanager/deleteTask/8/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"taskmanager",
+								"deleteTask",
+								"8",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

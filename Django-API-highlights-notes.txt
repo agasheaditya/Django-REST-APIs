@@ -1,0 +1,69 @@
+Steps to create an API using Django REST Framework:
+
+1) Create dir: mkdir python-api
+2) Change dir: cd python-api
+3) Create virtual environment: virtualenv venv
+4) Activate an venv: ./venv/Scripts/activate
+5) Installing libraries: pip install django djangorestframework markdown django-filter
+6) Create Django project and app
+	a) django-admin startproject django_api   # -> project name (django_api)
+	b) cd django_api
+	c) django-admin startapp django_test_api  # -> app name (django_test_api)
+	d) ls
+7) Now app is created, let's register an app by adding path to app config in "django_api/settings.py".
+	INSTALLED_APPS = [
+	...
+	'rest_framework',
+    'django_test_api.apps.DjangoTestApiConfig',
+	]
+
+8) Let's make sure that our app is running: python manage.py runserver
+9) Setting up Django models; mostly working with "django_test_api" files 
+10) After adding models lets run the migrations, so that Django will know that we are adding 2 new tables to the DB; steps are below:
+	a) python manage.py makemigrations
+	b) python manage.py migrate
+11) Setting up DRF serializers; since we have added models and created tables, it's time to tell DRF how to serialize the models.
+	-- Serializers will convert the Projects model and Employee model into JSON and that will be used by the API to return the data to user.
+	-- We will add the serializers by creating a new files "django_test_api/serializers.py". 
+12) Setting up routers and API URLs; to create a view of to the API and connect it to the Django URLs
+	-- Let's add 2 viewsets for each models we created in a new file "django_test_api/views.py".
+	-- Viewsets provide the advantage of combining multiple sets of logic into a single class
+13) As of now viewsets are defined we can now use the router functionality provioded by DRF to route a desired API endpoint to the given viewset. 
+	-- Let's create a new file "django_test_api/urls.py" and add the router configuration.
+14) Finally, let's connect with the main Django URL at "django_api/urls.py" to point to the app's URL file.
+15) The URLs generated will have all the desired API methods (GET, POST and PUT) we want. This is because the router automatically maps the URLs 
+    to the right handlers .get(), .list(), and .create() in the viewset. Let’s test out the API and make sure everything is working as expected.
+
+
+API URL details:
+  head URL: http://127.0.0.1:8000/dsl-api/
+  {
+    "employee": "http://127.0.0.1:8000/dsl-api/employee/",
+    "project": "http://127.0.0.1:8000/dsl-api/project/"
+  }
+
+
+===========================================================================
+SUPPORTIVE COMMANDS
+===========================================================================
+**Ref: 
+	https://www.ginkgobioworks.com/2021/02/04/creating-a-rest-api-using-django-rest-framework/
+	https://www.django-rest-framework.org/
+	https://docs.digitalocean.com/products/app-platform/languages-frameworks/python/django/
+	https://www.section.io/engineering-education/django-crud-api/
+	https://www.section.io/engineering-education/securing-django-api/
+	https://www.digitalocean.com/community/tutorials/how-to-display-data-from-the-digitalocean-api-with-django
+
+1) install django
+2) https://www.django-rest-framework.org/
+3) django-admin startproject practiceapi
+4) python manage.py startapp api
+5) python manage.py migrate  # the changes which we have made on database template
+6) python manage.py makemigrations
+7) python manage.py createsuperuser
+
+note -  Database -> Model -> Serializer -> API/Validations 
+
+## meta programming 
+
+ORM - classes to object conversion

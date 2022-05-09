@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Records</title>
+    <link crossorigin="anonymous"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css"
+          integrity="sha256-8B1OaG0zT7uYA572S2xOxWACq9NXYPQ+U5kHPV1bJN4="
+          rel="stylesheet"/>
+    <link rel="shortcut icon" type="image/png" href="https://www.kindpng.com/picc/m/163-1636666_brain-icon-hd-png-download.png"/>
+
+    <style>
+        h1 {
+          text-align: center;
+        }
+        
+        h2 {
+          text-align: center;
+        }
+        
+        h3 {
+          text-align: center;
+        }
+        </style>
+
+</head>
+<body>
+<nav aria-label="main navigation" class="navbar is-light" role="navigation">
+    <div class="navbar-brand">
+        <div class="navbar-item">
+            <img atl="DataScienceLabLogo" src="https://datasciencelab.in/wp-content/uploads/2020/08/Logo-300x121.png"
+                 style="margin-right: 0.5em;">Company Records
+        </div>
+    </div>
+</nav>
+
+<br>
+<h2>Employee Records</h2>
+<br>
+<table class="table is-fullwidth is-striped is-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Employee ID</th>
+        <th>System Name</th>
+        <th>Characteristic</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for e in emp %}
+    <tr>
+        <th>{{ e.name }}</th>
+        <td>{{ e.eid }}</td>
+        <td>{{ e.sys_name }}</td>
+        <td>{{ e.characteristics }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<br>
+<h2>Project Records</h2>
+<br>
+
+<table class="table is-fullwidth is-striped is-bordered">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Classification</th>
+        <th>Programming Language</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for proj in projects %}
+    <tr>
+        <th>{{ proj.name }}</th>
+        <td>{{ proj.classification }}</td>
+        <td>{{ proj.language }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+
+
+
+</body>
+</html>
